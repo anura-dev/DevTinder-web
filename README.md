@@ -6,7 +6,7 @@
 - Install Daisy UI
 - Add NavBar component to App.jsx
 - Create a NavBar.jsx separate Component file
-- Install react router dom
+- Install react-router-dom
 - Create BrowserRouter > Routes > Route=/ Body > RouteChildren
 - Create an Outlet in your Body Component
 - Create a footer
@@ -28,7 +28,7 @@
 - Edit Profile Feature
 - Show Toast Message on save of profile
 - New Page - See all my connections
-- New Page - See all my Connection REquests
+- New Page - See all my Connection Requests
 - Feature - Accept/Reject connection request
 - Send/Ignore the user card from the feed
 - Signup New User
