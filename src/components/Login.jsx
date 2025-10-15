@@ -22,7 +22,7 @@ const Login = () => {
         },
         { withCredentials: true } //withCredentials is used to set cookies in the frontend
       );
-      // console.log(res.data);
+
       dispatch(addUser(res.data));
       navigate("/");
     } catch (err) {

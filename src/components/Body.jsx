@@ -19,18 +19,18 @@ const Body = () => {
   }, []);
 
   const fetchUser = async () => {
+    if (userData) return;
     try {
       //gives the info of loggedInUser
       const res = await axios.get(BASE_URL + "/profile/view", {
         withCredentials: true,
       });
-      console.log(res);
+
       dispatch(addUser(res.data));
     } catch (err) {
       if (err.status === 401) {
         navigate("/login");
       }
-      console.log(err);
     }
   };
 
