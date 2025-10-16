@@ -23,7 +23,7 @@ const EditProfile = ({ user }) => {
     //Clear Errors
     setError("");
     try {
-      const res = await axios.patch(
+      const res = await axios.put(
         BASE_URL + "/profile/edit",
         {
           firstName,
@@ -41,7 +41,7 @@ const EditProfile = ({ user }) => {
         setShowToast(false);
       }, 3000);
     } catch (err) {
-      setError(err?.response?.data);
+      setError(err?.response?.data || "Something went wrong");
     }
   };
 
@@ -94,21 +94,20 @@ const EditProfile = ({ user }) => {
                   onChange={(e) => setGender(e.target.value)}
                 />
                 <legend className="fieldset-legend">Skills</legend>
-                <input
-                  type="text"
-                  className="input"
+                <textarea
+                  className="textarea"
                   placeholder="Skills"
                   value={skills}
                   onChange={(e) => setSkills(e.target.value)}
-                />
+                ></textarea>
                 <legend className="fieldset-legend">About</legend>
-                <input
-                  type="text"
-                  className="input"
+
+                <textarea
+                  className="textarea"
                   placeholder="About"
                   value={about}
                   onChange={(e) => setAbout(e.target.value)}
-                />
+                ></textarea>
               </fieldset>
             </div>
             <p className="text-red-500">{error}</p>
@@ -124,6 +123,7 @@ const EditProfile = ({ user }) => {
       <UserCard
         user={{ photoUrl, firstName, lastName, age, gender, skills, about }}
       />
+
       {showToast && (
         <div className="toast toast-top toast-center">
           <div className="alert alert-success">
