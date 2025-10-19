@@ -12,7 +12,7 @@ const EditProfile = ({ user }) => {
   const [age, setAge] = useState(user.age || "");
   const [gender, setGender] = useState(user.gender || "");
   const [about, setAbout] = useState(user.about || "");
-  const [skills, setSkills] = useState(user.skills);
+  const [skills, setSkills] = useState(user.skills || "");
 
   const [error, setError] = useState("");
   const [showToast, setShowToast] = useState(false);

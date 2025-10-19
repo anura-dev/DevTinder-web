@@ -10,9 +10,7 @@ const Feed = () => {
   const feed = useSelector((store) => store.feed);
 
   useEffect(() => {
-    if (!feed || feed.length === 0) {
-      fetchFeedUser();
-    }
+    fetchFeedUser();
   }, []);
 
   const fetchFeedUser = async () => {
@@ -27,6 +25,15 @@ const Feed = () => {
       console.log(err.message);
     }
   };
+
+  if (!feed) return;
+
+  if (feed.length <= 0)
+    return (
+      <h1 className="flex justify-center font-bold my-10">
+        No New Users Found
+      </h1>
+    );
 
   return (
     feed && (
